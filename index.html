@@ -44,7 +44,9 @@
                         </p>
                     </div>
                     <div class="inner-top-buttons">
-                        <button type="button">Back this project</button>
+                        <button class="inner-top-btn" type="button">
+                            Back this project
+                        </button>
                         <div class="bookmark">
                             <svg
                                 class="bookmark-logo"
@@ -211,11 +213,17 @@
                                 </div>
                                 <div class="modal-donation-card-pledge">
                                     <p>Enter your pledge</p>
+                                    <p class="error-msg">Please enter more</p>
+                                    <img
+                                        class="loader"
+                                        src="images/Eclipse-1s-200px.gif"
+                                    />
                                     <div class="pledge-input">
                                         <p>$</p>
                                         <input
                                             class="input-field"
                                             type="text"
+                                            min="1"
                                         />
                                     </div>
                                     <button type="button" class="pledge-btn">
@@ -243,11 +251,17 @@
                                 </div>
                                 <div class="modal-donation-card-pledge">
                                     <p>Enter your pledge</p>
+                                    <p class="error-msg">Please enter more</p>
+                                    <img
+                                        class="loader"
+                                        src="images/Eclipse-1s-200px.gif"
+                                    />
                                     <div class="pledge-input">
                                         <p>$</p>
                                         <input
                                             class="input-field"
                                             type="text"
+                                            min="25"
                                         />
                                     </div>
                                     <button type="button" class="pledge-btn">
@@ -277,11 +291,17 @@
                                 </div>
                                 <div class="modal-donation-card-pledge">
                                     <p>Enter your pledge</p>
+                                    <p class="error-msg">Please enter more</p>
+                                    <img
+                                        class="loader"
+                                        src="images/Eclipse-1s-200px.gif"
+                                    />
                                     <div class="pledge-input">
                                         <p>$</p>
                                         <input
                                             class="input-field"
                                             type="text"
+                                            min="75"
                                         />
                                     </div>
                                     <button type="button" class="pledge-btn">
@@ -311,11 +331,17 @@
                                 </div>
                                 <div class="modal-donation-card-pledge">
                                     <p>Enter your pledge</p>
+                                    <p class="error-msg">Please enter more</p>
+                                    <img
+                                        class="loader"
+                                        src="images/Eclipse-1s-200px.gif"
+                                    />
                                     <div class="pledge-input">
                                         <p>$</p>
                                         <input
                                             class="input-field"
                                             type="text"
+                                            min="200"
                                         />
                                     </div>
                                     <button type="button" class="pledge-btn">
@@ -324,6 +350,16 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="thanks-modal p-48">
+                        <img src="/images/icon-check.svg" alt="check-icon" />
+                        <h2>Thanks for your support!</h2>
+                        <p>
+                            Your pledge brings us one step closer to sharing
+                            Mastercraft Bamboo Monitor Riser worldwide. You will
+                            get an email once our campaign is completed.
+                        </p>
+                        <button class="thanks-btn" type="button">Got it</button>
                     </div>
                 </div>
             </main>

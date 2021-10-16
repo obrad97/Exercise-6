@@ -162,6 +162,22 @@ header ul li a:hover {
     margin: 0 auto;
 }
 
+.bookmark-active p {
+    color: var(--greenHover);
+}
+
+.bookmark-active circle {
+    fill: var(--greenHover);
+}
+
+.bookmark-active:hover circle {
+    fill: var(--greenHover);
+}
+
+.bookmark-active path {
+    fill: var(--white);
+}
+
 .tracker {
     width: 100%;
     margin-bottom: 29px;
@@ -509,6 +525,22 @@ cursor: pointer;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+.modal-donation-card-pledge-error .pledge-input {
+    margin-left: 20px;
+}
+
+.modal-donation-card-pledge-error .error-msg {
+    display: block;
+}
+
+.modal-donation-card-pledge-loader .pledge-input {
+    margin-left: 20px;
+}
+
+.modal-donation-card-pledge-loader .loader {
+    display: block;
+}
+
 .modal-donation-card-pledge p {
     font-weight: normal;
     font-size: 15px;
@@ -516,10 +548,22 @@ cursor: pointer;
     color: var(--gray);
 }
 
+.error-msg {
+    display: none;
+    color: red !important;
+    margin-left: auto;
+}
+
+.loader {
+    display: none;
+    width: 45px;
+    margin-left: auto;
+}
+
 .pledge-input {
     width: 107px;
     height: 48px;
-    margin-left: auto;
+    margin-left :auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -563,5 +607,52 @@ cursor: pointer;
 }
 
 .pledge-btn:hover {
+    background: var(--greenHover);
+}
+
+.thanks-modal {
+    display: none;
+    width: 540px;
+    height: 449px;
+    background-color: var(--white);
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.0497193);
+    border-radius: 8px;
+}
+
+.thanks-modal img {
+    margin-bottom: 48px;
+    width: 90px;
+    height: 90px;
+}
+
+.thanks-modal h2 {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+}
+.thanks-modal p {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--gray);
+}
+
+.thanks-modal button {
+    cursor: pointer;
+    width: 107px;
+    height: 48px;
+    background: var(--green);
+    border: none;
+    border-radius: 33.5px;
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--white);
+}
+
+.thanks-modal button:hover {
     background: var(--greenHover);
 }
