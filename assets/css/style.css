@@ -24,6 +24,7 @@ body {
     margin: 0 auto;
     background: var(--lightGray);
     padding-bottom: 124px;
+    position: relative;
 }
 
 header {
@@ -40,6 +41,11 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#menu-hamburger {
+    cursor: pointer;
+    display: none;
 }
 
 header ul {
@@ -103,6 +109,7 @@ header ul li a:hover {
 }
 
 .headline h1 {
+    margin-bottom: 15px;
     font-style: normal;
     font-weight: bold;
     font-size: 28px;
@@ -230,7 +237,6 @@ header ul li a:hover {
 
 #inner-line {
     height: 100%;
-    width: 79%;
     border-radius: 33.5px;
     background: var(--green);
 }
@@ -437,7 +443,9 @@ cursor: pointer;
 }
 
 .modal-donation-card-active .modal-donation-card-pledge {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto max-content max-content;
+    grid-template-rows: auto;
 }
 
 .radio-btn {
@@ -453,6 +461,7 @@ cursor: pointer;
     margin: 5px 24px 0 0;
     border: 1px solid var(--green);
     border-radius: 50%;
+    z-index: 9999;
 }
 
 .radio-btn-dot{
@@ -546,18 +555,22 @@ cursor: pointer;
     font-size: 15px;
     line-height: 28px;
     color: var(--gray);
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .error-msg {
+    font-size: 12px !important;
     display: none;
     color: red !important;
     margin-left: auto;
+    grid-area: 1 / 2 / 2 / 3 !important;
 }
 
 .loader {
     display: none;
     width: 45px;
     margin-left: auto;
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 .pledge-input {
@@ -569,6 +582,7 @@ cursor: pointer;
     justify-content: center;
     border: 1px solid var(--green);
     border-radius: 33.5px;
+    grid-area: 1 / 3 / 2 / 4;
 }
 
 .pledge-input p {
@@ -604,6 +618,8 @@ cursor: pointer;
     font-size: 14px;
     line-height: 17px;
     color: var(--white);
+    grid-area: 1 / 4 / 2 / 5;
+    justify-self: flex-end;
 }
 
 .pledge-btn:hover {
@@ -656,3 +672,359 @@ cursor: pointer;
 .thanks-modal button:hover {
     background: var(--greenHover);
 }
+
+.mobile-menu {
+    display: none;
+}
+
+@media only screen and (max-width:740px){
+    
+    body {
+        overflow: auto !important;
+    }
+
+    .container {
+        padding-bottom: 40px;
+    }
+
+    header{
+        height: 300px;
+        background-position: center;
+        padding: 32px 24px;
+    }
+
+    #menu-hamburger {
+        display: block;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .inner-container {
+        width: 100%;
+        padding: 0 24px;
+    }
+
+    .inner-top {
+        padding: 52px 24px 40px 24px;
+    }
+
+    .inner-top-buttons button {
+        width: 214px;
+    }
+
+    .headline h1 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .headline p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .tracker {
+        padding: 32px 25px 40px 25px;
+    }
+
+    .tracker-values {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tracker-values div{
+        border-right: none;
+    }
+
+    .money {
+        position: relative;
+        padding: 0;
+        margin: 0 auto 49px auto;
+    }
+
+    .money::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 80px;
+        margin: 0 auto;
+		left: 0;
+        right: 0;
+        bottom: -24px;
+        background: rgba(0, 0, 0, 0.15);
+    }
+    .backers{
+        position: relative;
+        padding: 0;
+        margin: 0 auto 49px auto;
+    }
+    .backers::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 80px;
+        margin: 0 auto;
+		left: 0;
+        right: 0;
+        bottom: -24px;
+        background: rgba(0, 0, 0, 0.15);
+    }
+    .days{
+        padding: 0;
+        margin: 0 auto 32px auto;
+    }
+
+    .about-description h2 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .about-description p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    
+    .donation-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .donation-head h2{
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 8px;
+    }
+
+    .donation-head p {
+        font-size: 14px;
+        line-height: 17px;  
+    }
+
+    .donation-mid p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .donation-bottom{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .donation-bottom h1 {
+        margin-bottom: 24px;
+    }
+
+    .modal {
+        position: absolute;
+        align-items: unset;
+        padding: 120px 24px 150px 24px;
+        height: 100%;
+    }
+
+    .modal-content{
+        width: 100%;
+        height: max-content;
+        padding: 32px 24px;
+        overflow-y: unset;
+        position: relative;
+    }
+
+    .modal-head h2 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .modal-head p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    #modal-close{
+        position: absolute;
+        right: 24px ;
+        top: 36px;
+    }
+
+    .radio-btn {
+        margin: 0;
+    }
+
+    .modal-donation-cards .modal-donation-card:first-child .plan-name{
+        margin-top: 14px;
+    }
+
+    .modal-donation-cards .modal-donation-card:first-child .modal-donation-card-description{
+        padding-bottom: 32px;
+    }
+
+    .modal-donation-card-name {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 40px;
+    }
+
+    .modal-donation-card-name h3 {
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 8px;
+    }
+
+    .modal-donation-card-name h2 {
+        position: absolute ;
+        bottom: 32px;
+        left: 24px;
+    }
+
+    .modal-donation-card-name p {
+        font-size: 14px;
+        line-height: 17px; 
+        margin-left: 0;
+    }
+
+    .modal-donation-card-description {
+        padding: 24px 24px 80px 24px;
+        position: relative;
+    }
+
+    .modal-donation-card-description p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .modal-donation-card-active .modal-donation-card-pledge  {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto;
+        column-gap: 16px;
+    }
+
+    .modal-donation-card-pledge p {
+        text-align: center;
+        grid-area: 1 / 1 / 2 / 3;
+        margin-bottom: 8px;
+    }
+
+    .modal-donation-card-pledge .error-msg {
+        text-align: center;
+        margin: 8px 0 0 0;
+        grid-area: 3 / 1 / 4 / 3 !important;
+    }
+
+    .modal-donation-card-pledge-error .pledge-input {
+        margin: 0;
+    }
+
+    .pledge-input {
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: flex-end;
+        margin: 0;
+    }
+
+    .pledge-input p {
+        margin: 0;
+    }
+
+    .pledge-btn {
+        grid-area: 2 / 2 / 3 / 3;
+        margin: 0;
+        justify-self: flex-start;
+    }
+
+    .loader {
+        grid-area: 4 / 1 / 5 / 3;
+        margin: 13px auto 0 auto;
+    }
+
+    .modal-donation-card-pledge-loader .pledge-input {
+        margin: 0;
+    }
+
+    .thanks-modal {
+        padding: 32px 24px 40px 24px;
+        height: max-content;
+    }
+
+    .thanks-modal img {
+        height: 64px;
+        width: 64px;
+        margin-bottom: 24px;
+    }
+
+    .thanks-modal h2 {
+        font-size: 18px;
+        line-height: 22px;
+        margin-right: 24px;
+    }
+
+    .thanks-modal p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 31px;
+    }
+
+    .mobile-menu-active {
+        display: block;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        padding: 32px 24px 0 24px;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.0001) 100%);
+    }
+
+    .mobile-menu-content {
+        width: 100%;
+    }
+
+    .logo-close {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 36px;
+    }
+
+    #menu-close{
+        cursor: pointer;
+    }
+
+    .menu {
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.0497193);
+        border-radius: 8px;
+    }
+
+    .menu ul {
+        display: block;
+        list-style: none;
+    }
+
+    .menu ul li {
+        padding: 24px;
+        border-bottom: 1px solid rgba(47, 47, 47, 0.1);
+        cursor: pointer;
+    }
+
+    .menu ul li:last-child {
+        border-bottom: none;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .bookmark {
+        width: max-content;
+    }
+
+    .bookmark p {
+        display: none;
+    }
+}
+
