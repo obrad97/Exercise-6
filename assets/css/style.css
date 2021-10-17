@@ -241,6 +241,10 @@ header ul li a:hover {
     background: var(--green);
 }
 
+.inner-bottom {
+    padding: 40px 24px;
+}
+
 .about-description {
     margin-bottom: 40px;
 }
@@ -273,7 +277,7 @@ header ul li a:hover {
 
 .donation-card {
     width: 100%;
-    padding: 38px 32px 32px 32px;
+    padding: 24px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     margin-bottom: 24px;
@@ -946,6 +950,7 @@ cursor: pointer;
     .thanks-modal {
         padding: 32px 24px 40px 24px;
         height: max-content;
+        align-self: center;
     }
 
     .thanks-modal img {
@@ -957,7 +962,6 @@ cursor: pointer;
     .thanks-modal h2 {
         font-size: 18px;
         line-height: 22px;
-        margin-right: 24px;
     }
 
     .thanks-modal p {
