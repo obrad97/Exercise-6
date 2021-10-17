@@ -22,17 +22,17 @@ currentMoneyDisplay.innerText = `$${currentMoney.toLocaleString('en-US')}`;
 currentBackersDisplay.innerText = currentBackers.toLocaleString('en-US');
 trackerLine.style.width = `${parseInt(currentMoneyDisplay.innerText.split('$')[1].split(',')[0])}%`;
 
-
+// Opens the mobile menu
 menuHamburger.addEventListener('click', (e)=> {
     mobileMenu.classList.add('mobile-menu-active');
     document.body.style.overflow = 'hidden';
 })
-
+// Closes the mobile menu
 menuClose.addEventListener('click', (e)=> {
     mobileMenu.classList.remove('mobile-menu-active');
     document.body.style.overflow = 'auto';
 })
-
+// Closes the mobile menu when clicked outside of it
 mobileMenu.addEventListener('click',(e)=> {
     if (e.target != e.currentTarget){
         return
@@ -41,7 +41,7 @@ mobileMenu.addEventListener('click',(e)=> {
         document.body.style.overflow = 'auto';
     }
 })
-
+// Enables/disables bookmark
 bookmark.addEventListener('click', (e)=> {
     const text = bookmark.querySelector('p');
     if (bookmark.classList.contains('bookmark-active')) {
@@ -52,14 +52,14 @@ bookmark.addEventListener('click', (e)=> {
         text.innerText = 'Bookmarked'
     }
 })
-
+// Closes the "Thank you modal" prompt
 thanksModalClose.addEventListener('click', (e)=>{
     thanksModal.style.display = "none";
     modalContent.style.display = "block";
     document.body.style.overflow = 'auto'
     modal.classList.remove('modal-active');
 })
-
+// Closes the modal
 modalClose.addEventListener('click',(e)=> {
     const errorMsg = document.querySelectorAll('.modal-donation-card-pledge');
     modal.classList.remove('modal-active');
@@ -68,12 +68,13 @@ modalClose.addEventListener('click',(e)=> {
         message.classList.remove('modal-donation-card-pledge-error')
     })
 })
-
+//Opens the modal
 openModal.addEventListener('click', (e)=> {
     modal.classList.add('modal-active');
     document.body.style.overflow = 'hidden'
 })
 
+// Enables the modal to be closed when clicking outside of it
 modal.addEventListener('click', (e)=>{
     const errorMsg = document.querySelectorAll('.modal-donation-card-pledge');
     if(e.target != e.currentTarget){
@@ -86,7 +87,7 @@ modal.addEventListener('click', (e)=>{
         })
     }
 })
-
+// Opens the modal depending on which card was clicked
 openPlanModal.forEach((button, index)=> {
     button.addEventListener('click',(e)=>{
         if (button.parentElement.parentElement.classList.contains('not-available')){
@@ -99,6 +100,7 @@ openPlanModal.forEach((button, index)=> {
     })
 })
 
+// These two functions expand the donation card when the modal is open
 radioPlanSelect.forEach((plan, index) => {
     plan.addEventListener('click', (e)=> {
         openPlan(index)
@@ -110,7 +112,7 @@ headlinePlanSelect.forEach((plan, index) => {
         openPlan(index)
     })
 })
-
+// This opens the modal when clciked on the donation cards
 const openPlan = (index) => {
     const planCard = document.getElementsByClassName('modal-donation-card');
     const errorMsg = document.querySelectorAll('.modal-donation-card-pledge');
@@ -127,7 +129,7 @@ const openPlan = (index) => {
         planCard[index].classList.toggle('modal-donation-card-active');
     }
 }
-
+// This checks if the required amount is entered when donating
 pledgeButton.forEach((button, index)=>{
     button.addEventListener('click', (e)=> {
         let minValue = parseInt(inputFields[index].getAttribute('min'));
@@ -151,6 +153,7 @@ pledgeButton.forEach((button, index)=>{
     })
 })
 
+// This updates the tracking values for donations
 const trackerUpdate =(value)=> {
     const maxMoney = 100000;
     currentMoney += value
