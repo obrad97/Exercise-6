@@ -25,12 +25,10 @@ trackerLine.style.width = `${parseInt(currentMoneyDisplay.innerText.split('$')[1
 // Opens the mobile menu
 menuHamburger.addEventListener('click', (e)=> {
     mobileMenu.classList.add('mobile-menu-active');
-    document.body.style.overflow = 'hidden';
 })
 // Closes the mobile menu
 menuClose.addEventListener('click', (e)=> {
     mobileMenu.classList.remove('mobile-menu-active');
-    document.body.style.overflow = 'auto';
 })
 // Closes the mobile menu when clicked outside of it
 mobileMenu.addEventListener('click',(e)=> {
@@ -38,7 +36,6 @@ mobileMenu.addEventListener('click',(e)=> {
         return
     }else {
         mobileMenu.classList.remove('mobile-menu-active');
-        document.body.style.overflow = 'auto';
     }
 })
 // Enables/disables bookmark
@@ -56,14 +53,12 @@ bookmark.addEventListener('click', (e)=> {
 thanksModalClose.addEventListener('click', (e)=>{
     thanksModal.style.display = "none";
     modalContent.style.display = "block";
-    document.body.style.overflow = 'auto'
     modal.classList.remove('modal-active');
 })
 // Closes the modal
 modalClose.addEventListener('click',(e)=> {
     const errorMsg = document.querySelectorAll('.modal-donation-card-pledge');
     modal.classList.remove('modal-active');
-    document.body.style.overflow = 'auto'
     errorMsg.forEach((message)=> {
         message.classList.remove('modal-donation-card-pledge-error')
     })
@@ -71,7 +66,6 @@ modalClose.addEventListener('click',(e)=> {
 //Opens the modal
 openModal.addEventListener('click', (e)=> {
     modal.classList.add('modal-active');
-    document.body.style.overflow = 'hidden'
 })
 
 // Enables the modal to be closed when clicking outside of it
@@ -81,7 +75,8 @@ modal.addEventListener('click', (e)=>{
         return
     }else {
         modal.classList.remove('modal-active');
-        document.body.style.overflow = 'auto'
+        thanksModal.style.display = 'none';
+        modalContent.style.display = 'block';
         errorMsg.forEach((message)=> {
             message.classList.remove('modal-donation-card-pledge-error')
         })
@@ -94,7 +89,6 @@ openPlanModal.forEach((button, index)=> {
             return
         } else {
             modal.classList.add('modal-active');
-            document.body.style.overflow = 'hidden'
             openPlan(index+1)
         }
     })
@@ -147,6 +141,7 @@ pledgeButton.forEach((button, index)=>{
             setTimeout(() => {
                 parentElement[index].classList.remove('modal-donation-card-pledge-loader');
                 modalContent.style.display = "none";
+                window.scrollTo(0, 0);
                 thanksModal.style.display = 'block';
             }, 1000);
         }
